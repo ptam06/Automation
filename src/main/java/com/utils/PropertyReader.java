@@ -20,7 +20,10 @@ public class PropertyReader {
             inputStream = PropertyReader.class.getClass().getResourceAsStream(propFile);
             if (inputStream != null) {
                 prop.load(inputStream);
-            } else {
+            }
+            else
+            {
+              throw  new FileNotFoundException("The required property file" +propFile+ "not found");
             }
 
             Set propNames = prop.stringPropertyNames();
