@@ -21,13 +21,12 @@ public class PropertyReader {
             if (inputStream != null) {
                 prop.load(inputStream);
             } else {
-                throw new FileNotFoundException("Property file" +propFile+ "is not found on the class path");
             }
 
             Set propNames = prop.stringPropertyNames();
-            Iterator<String> itr = propNames.iterator();
-            while (itr.hasNext()) {
-                 String key = itr.next(); //return the key
+            Iterator<String> iterator = propNames.iterator();
+            while (iterator.hasNext()) {
+                 String key = iterator.next(); //return the key
                   result.put(key, prop.getProperty(key));//store (key, value) to result variable.Since result declared has hashmap
 
 
