@@ -16,7 +16,7 @@ public class PropertyReader {
 
             Properties prop = new Properties();
            String propFile=fileinfo;
-            //specifying the property file using Class loader
+
             inputStream = PropertyReader.class.getClass().getResourceAsStream(propFile);
             if (inputStream != null) {
                 prop.load(inputStream);
@@ -26,8 +26,8 @@ public class PropertyReader {
             Set propNames = prop.stringPropertyNames();
             Iterator<String> iterator = propNames.iterator();
             while (iterator.hasNext()) {
-                 String key = iterator.next(); //return the key
-                  result.put(key, prop.getProperty(key));//store (key, value) to result variable.Since result declared has hashmap
+                 String key = iterator.next();
+                  result.put(key, prop.getProperty(key));
 
 
             }
